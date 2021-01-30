@@ -20,14 +20,14 @@ while F == 0:
 
 
     #Set CPU frequency to slow
-    if inp == 'slow':
+    if inp == 'slow' or 's':
         #Min frequency
         os.system("sudo cpupower frequency-set -d 800MHz")
         #Max frequency
         os.system("sudo cpupower frequency-set -u 800MHz")
 
     #Set CPU frequency to fast
-    elif inp == 'fast':
+    elif inp == 'fast' or 'f':
         #Min frequency
         os.system("sudo cpupower frequency-set -d 2GHz")
         #Max frequency
@@ -36,19 +36,19 @@ while F == 0:
     #Dissable 4 CPU cores
     #Needs sudo su for some reason :(
     #Doesn't work right now
-    elif inp == 'dis':
+    elif inp == 'dis' or 'd':
         subprocess.call(['sh', './dissable.sh'])
         #os.system("./dissable.sh")
 
     #Enables 4 CPU cores
     #Also needs sudo su for some reason :(
     #Doesn't work right now
-    elif inp == 'ena':
+    elif inp == 'ena' or 'e':
         subprocess.call(['sh', './enable.sh'])
         #os.system("./enable.sh")
 
     #Check the CPU frequency
-    elif inp == 'check':
+    elif inp == 'check' or 'c':
         #Frequency pr. CPU thread
         print("Frequency pr. CPU thread")
         os.system("cat /proc/cpuinfo | grep MHz")
@@ -58,9 +58,20 @@ while F == 0:
 
     #Start the server
     #The java file has to be in the same folder as this script
-    elif inp == 'start':
+    elif inp == 'start' or 'S':
         subprocess.call(['sh', './run.sh'])
         #os.system("./run.sh")
+
+    elif inp == 'help' or 'h':
+        print("Commands:")
+        print("s or slow  >   Makes the CPU to utilize a slower frequency")
+        print("f or fast  >   Makes the CPU to utilize a faster frequency")
+        print("d or dis   >   Dissables 4 CPU cores")
+        print("e or ena   >   Enables the 4 dissabled cores")
+        print("c or check >   Checks the CPU frequency for every CPU thread")
+        print("S or start >   Starts the Java Paper Spigot Minecraft server")
+        print("q     >   Quits the Python script")
+        print("h     >   Help")
 
     #Close the script
     elif inp == 'q':
