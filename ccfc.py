@@ -3,17 +3,20 @@ import os
 F = 0
 inp = ''
 
+print("Commands:")
+print("slow  >   Makes the CPU to utilize a slower frequency")
+print("fast  >   Makes the CPU to utilize a faster frequency")
+print("dis   >   Dissables 4 CPU cores")
+print("ena   >   Enables the 4 dissabled cores")
+print("check >   Checks the CPU frequency for every CPU thread")
+print("start >   Starts the Java Paper Spigot Minecraft server")
+print("q     >   Quits the Python script")
+print("h     >   Help")
+
 #Just a loop
 while F == 0:
     inp = input('> ')
-    print("Commands:")
-    print("slow  >   Makes the CPU to utilize a slower frequency")
-    print("fast  >   Makes the CPU to utilize a faster frequency")
-    print("dis   >   Dissables 4 CPU cores")
-    print("ena   >   Enables the 4 dissabled cores")
-    print("check >   Checks the CPU frequency for every CPU thread")
-    print("start >   Starts the Java Paper Spigot Minecraft server")
-    print("q     >   Quits the Python script")
+
 
     #Set CPU frequency to slow
     if inp == 'slow':
