@@ -1,7 +1,7 @@
 import os
+import subprocess
 
 F = 0
-c = 0
 inp = ''
 
 print("Commands:")
@@ -37,13 +37,15 @@ while F == 0:
     #Needs sudo su for some reason :(
     #Doesn't work right now
     elif inp == 'dis':
-        os.system("./dissable.sh")
+        subprocess.call(['sh', './dissable.sh'])
+        #os.system("./dissable.sh")
 
     #Enables 4 CPU cores
     #Also needs sudo su for some reason :(
     #Doesn't work right now
     elif inp == 'ena':
-        os.system("./enable.sh")
+        subprocess.call(['sh', './enable.sh'])
+        #os.system("./enable.sh")
 
     #Check the CPU frequency
     elif inp == 'check':
@@ -57,7 +59,8 @@ while F == 0:
     #Start the server
     #The java file has to be in the same folder as this script
     elif inp == 'start':
-        os.system("./run.sh")
+        subprocess.call(['sh', './run.sh'])
+        #os.system("./run.sh")
 
     #Close the script
     elif inp == 'q':
