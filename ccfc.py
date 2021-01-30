@@ -29,9 +29,9 @@ while F == 0:
     #Set CPU frequency to fast
     elif inp == 'fast':
         #Min frequency
-        os.system("sudo cpupower frequency-set -d 1.5GHz")
+        os.system("sudo cpupower frequency-set -d 2GHz")
         #Max frequency
-        os.system("sudo cpupower frequency-set -u 3GHz")
+        os.system("sudo cpupower frequency-set -u 3.8GHz")
 
     #Dissable 4 CPU cores
     #Needs sudo su for some reason :(
