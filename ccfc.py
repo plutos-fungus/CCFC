@@ -21,17 +21,11 @@ while F == 0:
     #Dissable 4 CPU cores
     #Needs sudo su for some reason :(
     elif inp == 'dis':
-        os.system("echo 0 > /sys/devices/system/cpu/cpu1/online")
-        os.system("echo 0 > /sys/devices/system/cpu/cpu2/online")
-        os.system("echo 0 > /sys/devices/system/cpu/cpu3/online")
-        os.system("echo 0 > /sys/devices/system/cpu/cpu4/online")
+        os.system("./dissable.sh")
     #Enables 4 CPU cores
     #Also needs sudo su for some reason :(
     elif inp == 'ena':
-        os.system("echo 1 > /sys/devices/system/cpu/cpu1/online")
-        os.system("echo 1 > /sys/devices/system/cpu/cpu2/online")
-        os.system("echo 1 > /sys/devices/system/cpu/cpu3/online")
-        os.system("echo 1 > /sys/devices/system/cpu/cpu4/online")
+        os.system("./enable.sh")
     #Check the CPU frequency
     elif inp == 'check':
         os.system("cat /proc/cpuinfo | grep MHz")
