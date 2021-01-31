@@ -20,35 +20,31 @@ while F == 0:
 
 
     #Set CPU frequency to slow
-    if inp == 'slow' or 's':
+    if inp == "slow":
         #Min frequency
         os.system("sudo cpupower frequency-set -d 800MHz")
         #Max frequency
         os.system("sudo cpupower frequency-set -u 800MHz")
 
     #Set CPU frequency to fast
-    elif inp == 'fast' or 'f':
+    elif inp == "fast":
         #Min frequency
         os.system("sudo cpupower frequency-set -d 2GHz")
         #Max frequency
         os.system("sudo cpupower frequency-set -u 3.8GHz")
 
     #Dissable 4 CPU cores
-    #Needs sudo su for some reason :(
-    #Doesn't work right now
-    elif inp == 'dis' or 'd':
+    elif inp == "dis":
         subprocess.call(['sh', './dissable.sh'])
         #os.system("./dissable.sh")
 
     #Enables 4 CPU cores
-    #Also needs sudo su for some reason :(
-    #Doesn't work right now
-    elif inp == 'ena' or 'e':
+    elif inp == "ena":
         subprocess.call(['sh', './enable.sh'])
         #os.system("./enable.sh")
 
     #Check the CPU frequency
-    elif inp == 'check' or 'c':
+    elif inp == "check":
         #Frequency pr. CPU thread
         print("Frequency pr. CPU thread")
         os.system("cat /proc/cpuinfo | grep MHz")
@@ -58,11 +54,11 @@ while F == 0:
 
     #Start the server
     #The java file has to be in the same folder as this script
-    elif inp == 'start' or 'S':
+    elif inp == "start":
         subprocess.call(['sh', './run.sh'])
         #os.system("./run.sh")
 
-    elif inp == 'help' or 'h':
+    elif inp == "help":
         print("Commands:")
         print("s or slow  >   Makes the CPU to utilize a slower frequency")
         print("f or fast  >   Makes the CPU to utilize a faster frequency")
@@ -74,5 +70,5 @@ while F == 0:
         print("h     >   Help")
 
     #Close the script
-    elif inp == 'q':
+    elif inp == "q":
         exit()
